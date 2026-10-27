@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Kilat ATS - Bikin CV ATS-Friendly Gratis & 100% Lolos Screening HRD</title>
+  <meta name="description" content="Generator CV ATS-Friendly gratis dan instan standar HRD Indonesia. 100% lolos robot screening, ramah HP, tanpa watermark, dan tanpa kartu kredit.">
+  <meta name="keywords" content="bikin cv gratis, cv ats friendly indonesia, generator cv cepat, cv lamaran kerja, download cv word pdf">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- html2pdf.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Merriweather', 'serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Styling khusus Lembar Kertas A4 */
+    .a4-sheet {
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      box-sizing: border-box;
+      padding: 18mm 18mm 16mm 18mm;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15);
+      margin: 0 auto;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1f2937;
+      line-height: 1.45;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #cv-preview, #cv-preview * {
+        visibility: visible;
+      }
+      #cv-preview {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 12mm 15mm !important;
+        box-shadow: none !important;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+
+    /* Scrollbar halus */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+  <!-- Top Navbar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 to-indigo-600 flex items-center justify-center text-white font-extrabold text-xl shadow-md">
+          CV
+        </div>
+        <div>
+          <span class="font-extrabold text-lg text-slate-900 tracking-tight flex items-center gap-1.5">
+            CV Kilat <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-bold uppercase tracking-wide">ATS-Friendly</span>
+          </span>
+          <p class="text-xs text-slate-500 hidden sm:block">100% Gratis • Lolos Robot HRD • Tanpa Watermark</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <button id="btn-load-sample" onclick="loadSampleData()" class="px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition border border-slate-200 flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          <span class="hidden sm:inline">Muat</span> Contoh Data
+        </button>
+
+        <button onclick="downloadPDF()" class="px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition shadow-md hover:shadow-lg flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          <span>Unduh PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile View Toggle (Tab untuk HP) -->
+  <div class="lg:hidden bg-white border-b border-slate-200 px-4 py-2 flex justify-center sticky top-16 z-30 shadow-xs">
+    <div class="grid grid-cols-2 bg-slate-100 p-1 rounded-xl w-full max-w-sm text-xs font-semibold">
+      <button id="tab-btn-editor" onclick="switchMobileTab('editor')" class="py-1.5 rounded-lg bg-white text-blue-700 shadow-sm transition">
+        ✏️ Edit Data
+      </button>
+      <button id="tab-btn-preview" onclick="switchMobileTab('preview')" class="py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">
+        👁️ Lihat CV (A4)
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- LEFT COLUMN: Form Input Editor -->
+      <section id="pane-editor" class="lg:col-span-6 space-y-6">
+
+        <!-- Banner Keuntungan ATS -->
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-4 flex items-start gap-3 shadow-xs">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0">
+            ✓
+          </div>
+          <div class="text-xs sm:text-sm">
+            <h3 class="font-bold text-blue-950">Standar 1 Kolom Resmi ATS HRD</h3>
+            <p class="text-blue-800/80 mt-0.5">Format ini 100% terbaca oleh mesin seleksi otomatis (SSCASN, Jobstreet, Workday, Taleo). Bersih, rapi, dan langsung diprioritaskan recruiter.</p>
+          </div>
+        </div>
+
+        <!-- Pilihan Aksen Warna ATS -->
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Aksen Warna Formal:</span>
+          <div class="flex items-center gap-2.5">
+            <button onclick="setAccentColor('navy')" title="Corporate Navy" class="w-7 h-7 rounded-full bg-[#1E3A8A] ring-2 ring-offset-2 ring-blue-700 transition transform hover:scale-110"></button>
+            <button onclick="setAccentColor('slate')" title="Modern Slate" class="w-7 h-7 rounded-full bg-[#334155] ring-2 ring-offset-2 ring-transparent transition transform hover:scale-110"></button>
+            <button onclick="setAccentColor('emerald')" title="Forest Emerald" class="w-7 h-7 rounded-full bg-[#065F46] ring-2 ring-offset-2 ring-transparent transition transform hover:scale-110"></button>
+            <button onclick="setAccentColor('black')" title="Monochrome Formal" class="w-7 h-7 rounded-full bg-[#111827] ring-2 ring-offset-2 ring-transparent transition transform hover:scale-110"></button>
+          </div>
+        </div>
+
+        <!-- ACCORDION FORM SECTIONS -->
+
+        <!-- 1. Data Diri & Kontak -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+          <div class="bg-slate-50 px-5 py-3.5 border-b border-slate-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">1</span>
+              Data Pribadi & Kontak
+            </span>
+          </div>
+          <div class="p-5 space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap & Gelar *</label>
+              <input type="text" id="inp-name" oninput="renderCV()" placeholder="Contoh: Ahmad Fauzi, S.Kom" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition font-medium">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Kota Domisili *</label>
+                <input type="text" id="inp-location" oninput="renderCV()" placeholder="Contoh: Jakarta Selatan, DKI Jakarta" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Nomor WhatsApp / HP *</label>
+                <input type="text" id="inp-phone" oninput="renderCV()" placeholder="Contoh: +62 812-3456-7890" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Alamat Email *</label>
+                <input type="email" id="inp-email" oninput="renderCV()" placeholder="Contoh: ahmad.fauzi@email.com" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">LinkedIn / Portofolio (Opsional)</label>
+                <input type="text" id="inp-linkedin" oninput="renderCV()" placeholder="Contoh: linkedin.com/in/ahmadfauzi" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Ringkasan Diri / About Me -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+          <div class="bg-slate-50 px-5 py-3.5 border-b border-slate-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">2</span>
+              Ringkasan Profesional
+            </span>
+            <div class="relative inline-block text-left">
+              <button onclick="toggleQuickSummary()" class="text-xs text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1">
+                ⚡ Template Siap Pakai
+              </button>
+            </div>
+          </div>
+          <div class="p-5 space-y-3">
+            <!-- Pilihan Cepat Template Ringkasan -->
+            <div id="quick-summary-box" class="hidden bg-slate-50 border border-slate-200 p-3 rounded-xl text-xs space-y-2 mb-3">
+              <p class="font-bold text-slate-700">Pilih Template Sesuai Kondisi Anda:</p>
+              <div class="flex flex-wrap gap-1.5">
+                <button type="button" onclick="applySummaryTemplate('fresh_grad')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">Fresh Graduate</button>
+                <button type="button" onclick="applySummaryTemplate('admin')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">Staf Administrasi</button>
+                <button type="button" onclick="applySummaryTemplate('it_support')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">IT Support / Jaringan</button>
+                <button type="button" onclick="applySummaryTemplate('sales_kasir')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">Kasir / Pramuniaga</button>
+              </div>
+            </div>
+
+            <textarea id="inp-summary" rows="4" oninput="renderCV()" placeholder="Tuliskan 2-3 kalimat singkat tentang latar belakang pendidikan, keahlian utama, dan motivasi kerja Anda..." class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition leading-relaxed"></textarea>
+          </div>
+        </div>
+
+        <!-- 3. Pengalaman Kerja / Magang / Organisasi -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+          <div class="bg-slate-50 px-5 py-3.5 border-b border-slate-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">3</span>
+              Pengalaman Kerja / Magang
+            </span>
+            <button type="button" onclick="addExperience()" class="text-xs bg-blue-50 hover:bg-blue-100 text-blue-700 px-3 py-1 rounded-lg font-bold border border-blue-200 transition">
+              + Tambah Posisi
+            </button>
+          </div>
+          <div class="p-5">
+            <div id="experience-list" class="space-y-6">
+              <!-- Item pengalaman di-generate via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Riwayat Pendidikan -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+          <div class="bg-slate-50 px-5 py-3.5 border-b border-slate-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">4</span>
+              Riwayat Pendidikan
+            </span>
+          </div>
+          <div class="p-5 space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Universitas / Sekolah *</label>
+              <input type="text" id="inp-edu-school" oninput="renderCV()" placeholder="Contoh: Universitas Budi Luhur" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Jenjang & Jurusan *</label>
+                <input type="text" id="inp-edu-degree" oninput="renderCV()" placeholder="Contoh: S1 Sistem Informasi" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Tahun Lulus / Periode</label>
+                <input type="text" id="inp-edu-year" oninput="renderCV()" placeholder="Contoh: 2019 – 2023" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">IPK / Nilai Rata-rata (Opsional)</label>
+                <input type="text" id="inp-edu-gpa" oninput="renderCV()" placeholder="Contoh: IPK 3.52 / 4.00" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Judul Skripsi / Keterangan (Opsional)</label>
+                <input type="text" id="inp-edu-notes" oninput="renderCV()" placeholder="Contoh: Fokus Jaringan & Cloud" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Keahlian & Sertifikat -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+          <div class="bg-slate-50 px-5 py-3.5 border-b border-slate-200 flex justify-between items-center">
+            <span class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">5</span>
+              Keahlian & Sertifikasi
+            </span>
+          </div>
+          <div class="p-5 space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Keahlian Teknis / Software (Hard Skills) *</label>
+              <input type="text" id="inp-skills-hard" oninput="renderCV()" placeholder="Contoh: Microsoft Excel (VLOOKUP, Pivot), Jaringan LAN, Google Docs, SQL Dasar" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              <p class="text-[11px] text-slate-400 mt-1">Pisahkan dengan koma.</p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Keahlian Non-Teknis (Soft Skills)</label>
+              <input type="text" id="inp-skills-soft" oninput="renderCV()" placeholder="Contoh: Komunikasi, Layanan Pelanggan, Kerja Sama Tim, Problem Solving" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Bahasa yang Dikuasai</label>
+              <input type="text" id="inp-skills-lang" oninput="renderCV()" placeholder="Contoh: Bahasa Indonesia (Aktif/Ibu), Bahasa Inggris (Menengah)" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Sertifikasi & Pelatihan (Opsional, pisahkan baris baru)</label>
+              <textarea id="inp-certifications" rows="2" oninput="renderCV()" placeholder="Contoh:&#10;• Sertifikat IT Support Google — Coursera (2023)&#10;• Pelatihan Microsoft Office Specialist — Balai Latihan Kerja (2023)" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Aksi Tambahan: Salin Teks -->
+        <div class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 shadow-xs">
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">Butuh Teks Mentah untuk Portal Kerja?</h4>
+            <p class="text-[11px] text-slate-500">Salin seluruh teks CV untuk ditempel di formulir pendaftaran Jobstreet/Glints.</p>
+          </div>
+          <button onclick="copyPlainText()" class="px-3 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg border border-slate-300 transition">
+            📋 Salin Teks
+          </button>
+        </div>
+
+      </section>
+
+
+      <!-- RIGHT COLUMN: Live Real-time A4 Preview -->
+      <section id="pane-preview" class="lg:col-span-6 hidden lg:block sticky top-24">
+        
+        <!-- Preview Action Toolbar -->
+        <div class="flex items-center justify-between mb-3 px-1">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+              Skor ATS: 100/100
+            </span>
+            <span class="text-xs text-slate-500 hidden sm:inline">Pratinjau Kertas A4</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="window.print()" class="text-xs px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 rounded-lg font-medium text-slate-700 transition flex items-center gap-1">
+              🖨️ Cetak / Print
+            </button>
+            <button onclick="downloadPDF()" class="text-xs px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold transition shadow-xs flex items-center gap-1.5">
+              📥 Unduh PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Scrollable A4 Container -->
+        <div class="overflow-x-auto pb-8 rounded-2xl">
+          <div id="cv-preview" class="a4-sheet">
+            <!-- CV Header -->
+            <div class="text-center pb-3 border-b-2" id="cv-header-border" style="border-color: #1E3A8A;">
+              <h1 id="out-name" class="text-2xl font-extrabold uppercase tracking-tight" style="color: #1E3A8A;">AHMAD FAUZI</h1>
+              <div id="out-contact" class="text-[11px] font-medium text-slate-600 mt-1.5 flex flex-wrap justify-center items-center gap-x-2.5 gap-y-1">
+                <span id="out-location">Jakarta Selatan, DKI Jakarta</span>
+                <span>•</span>
+                <span id="out-phone">+62 812-3456-7890</span>
+                <span>•</span>
+                <span id="out-email">ahmad.fauzi@email.com</span>
+                <span id="out-linkedin-wrap" class="hidden">• <span id="out-linkedin">linkedin.com/in/ahmadfauzi</span></span>
+              </div>
+            </div>
+
+            <!-- Ringkasan Profesional -->
+            <div id="sec-summary" class="mt-4">
+              <h2 class="text-xs font-bold uppercase tracking-wider mb-1 section-title" style="color: #1E3A8A;">Ringkasan Profesional</h2>
+              <div class="w-full h-0.5 bg-slate-200 mb-2 section-line" style="background-color: #1E3A8A; opacity: 0.2;"></div>
+              <p id="out-summary" class="text-[11px] text-slate-700 text-justify leading-relaxed font-normal">
+                Staf Administrasi & IT Support dengan pengalaman kerja 1 tahun di industri retail dan jasa. Terbiasa mengelola pemeliharaan 50+ unit perangkat komputer kantor, administrasi berkas, serta pengolahan data inventaris menggunakan Microsoft Excel. Memiliki komunikasi yang baik, teliti, dan siap berkontribusi penuh waktu.
+              </p>
+            </div>
+
+            <!-- Pengalaman Kerja -->
+            <div id="sec-experience" class="mt-4">
+              <h2 class="text-xs font-bold uppercase tracking-wider mb-1 section-title" style="color: #1E3A8A;">Pengalaman Kerja</h2>
+              <div class="w-full h-0.5 bg-slate-200 mb-2 section-line" style="background-color: #1E3A8A; opacity: 0.2;"></div>
+              <div id="out-experience-list" class="space-y-3">
+                <!-- Dynamic Experience items -->
+              </div>
+            </div>
+
+            <!-- Riwayat Pendidikan -->
+            <div id="sec-education" class="mt-4">
+              <h2 class="text-xs font-bold uppercase tracking-wider mb-1 section-title" style="color: #1E3A8A;">Riwayat Pendidikan</h2>
+              <div class="w-full h-0.5 bg-slate-200 mb-2 section-line" style="background-color: #1E3A8A; opacity: 0.2;"></div>
+              <div class="flex justify-between items-baseline text-[11px]">
+                <div>
+                  <span id="out-edu-degree" class="font-bold text-slate-900">Sarjana Komputer (S.Kom) - Sistem Informasi</span>
+                  <div id="out-edu-school" class="text-slate-600 font-medium">Universitas Budi Luhur</div>
+                  <div id="out-edu-notes" class="text-slate-500 italic mt-0.5">Judul Skripsi: Sistem Informasi Inventaris Kantor Cabang</div>
+                </div>
+                <div class="text-right shrink-0">
+                  <div id="out-edu-year" class="font-bold text-slate-700">2019 – 2023</div>
+                  <div id="out-edu-gpa" class="text-slate-600 font-semibold mt-0.5">IPK: 3.52 / 4.00</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Keahlian Utama -->
+            <div id="sec-skills" class="mt-4">
+              <h2 class="text-xs font-bold uppercase tracking-wider mb-1 section-title" style="color: #1E3A8A;">Keahlian & Kompetensi</h2>
+              <div class="w-full h-0.5 bg-slate-200 mb-2 section-line" style="background-color: #1E3A8A; opacity: 0.2;"></div>
+              <div class="text-[11px] space-y-1.5">
+                <div id="row-skills-hard" class="flex items-start">
+                  <span class="w-36 font-bold text-slate-800 shrink-0">• Keahlian Teknis :</span>
+                  <span id="out-skills-hard" class="text-slate-700">Microsoft Excel (VLOOKUP, Pivot), Jaringan LAN/WiFi, Troubleshooting PC, Google Workspace</span>
+                </div>
+                <div id="row-skills-soft" class="flex items-start">
+                  <span class="w-36 font-bold text-slate-800 shrink-0">• Keahlian Non-Teknis :</span>
+                  <span id="out-skills-soft" class="text-slate-700">Komunikasi, Layanan Pelanggan, Kerja Sama Tim, Problem Solving</span>
+                </div>
+                <div id="row-skills-lang" class="flex items-start">
+                  <span class="w-36 font-bold text-slate-800 shrink-0">• Bahasa :</span>
+                  <span id="out-skills-lang" class="text-slate-700">Bahasa Indonesia (Fasih/Ibu), Bahasa Inggris (Menengah)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sertifikasi -->
+            <div id="sec-cert" class="mt-4">
+              <h2 class="text-xs font-bold uppercase tracking-wider mb-1 section-title" style="color: #1E3A8A;">Sertifikasi & Pelatihan</h2>
+              <div class="w-full h-0.5 bg-slate-200 mb-2 section-line" style="background-color: #1E3A8A; opacity: 0.2;"></div>
+              <ul id="out-certifications" class="text-[11px] text-slate-700 list-disc list-inside space-y-1 leading-relaxed">
+                <!-- Cert items -->
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="font-medium text-slate-700">CV Kilat ATS — Generator CV Standar Rekrutmen Resmi Indonesia</p>
+      <p class="mt-1">Format 1 Kolom Bersih • Bebas Watermark • Dibuat Khusus untuk Membantu Para Pencari Kerja</p>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl text-xs font-semibold flex items-center gap-2 transform translate-y-20 opacity-0 transition duration-300 z-50">
+    <span id="toast-icon">✓</span>
+    <span id="toast-msg">Teks berhasil disalin!</span>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    let currentAccent = 'navy';
+    const accentColors = {
+      navy: '#1E3A8A',
+      slate: '#334155',
+      emerald: '#065F46',
+      black: '#111827'
+    };
+
+    let experiences = [];
+
+    // Inisialisasi awal
+    window.addEventListener('DOMContentLoaded', () => {
+      loadSampleData();
+    });
+
+    function setAccentColor(color) {
+      currentAccent = color;
+      const hex = accentColors[color];
+      
+      document.getElementById('out-name').style.color = hex;
+      document.getElementById('cv-header-border').style.borderColor = hex;
+
+      document.querySelectorAll('.section-title').forEach(el => {
+        el.style.color = hex;
+      });
+      document.querySelectorAll('.section-line').forEach(el => {
+        el.style.backgroundColor = hex;
+      });
+      showToast('Warna aksen diubah!');
+    }
+
+    function addExperience(data = null) {
+      const id = Date.now() + Math.random().toString(36).substr(2, 4);
+      const expItem = data || {
+        id,
+        role: '',
+        company: '',
+        city: '',
+        period: '',
+        desc: ''
+      };
+
+      experiences.push(expItem);
+      renderExperienceInputs();
+      renderCV();
+    }
+
+    function removeExperience(id) {
+      experiences = experiences.filter(e => e.id !== id);
+      renderExperienceInputs();
+      renderCV();
+    }
+
+    function updateExpField(id, field, value) {
+      const exp = experiences.find(e => e.id === id);
+      if (exp) {
+        exp[field] = value;
+        renderCV();
+      }
+    }
+
+    function renderExperienceInputs() {
+      const container = document.getElementById('experience-list');
+      container.innerHTML = '';
+
+      if (experiences.length === 0) {
+        container.innerHTML = '<p class="text-xs text-slate-400 italic">Belum ada pengalaman ditambahkan. Klik tombol "+ Tambah Posisi" di atas.</p>';
+        return;
+      }
+
+      experiences.forEach((exp, idx) => {
+        const itemHtml = document.createElement('div');
+        itemHtml.className = 'p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 relative';
+        itemHtml.innerHTML = `
+          <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+            <span class="text-xs font-bold text-slate-700">Posisi #${idx + 1}</span>
+            <button type="button" onclick="removeExperience('${exp.id}')" class="text-xs text-red-500 hover:text-red-700 font-semibold">
+              Hapus
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">Jabatan / Posisi</label>
+              <input type="text" value="${exp.role}" oninput="updateExpField('${exp.id}', 'role', this.value)" placeholder="Contoh: IT Support / Staf Admin" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">Nama Perusahaan / Organisasi</label>
+              <input type="text" value="${exp.company}" oninput="updateExpField('${exp.id}', 'company', this.value)" placeholder="Contoh: PT Sinar Nusantara Abadi" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">Kota Kantor</label>
+              <input type="text" value="${exp.city}" oninput="updateExpField('${exp.id}', 'city', this.value)" placeholder="Contoh: Jakarta Pusat" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">Periode Kerja</label>
+              <input type="text" value="${exp.period}" oninput="updateExpField('${exp.id}', 'period', this.value)" placeholder="Contoh: Jan 2024 – Sekarang" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-[11px] font-semibold text-slate-600">Deskripsi Tugas (Awali dengan kata kerja aktif):</label>
+            </div>
+            <textarea rows="3" oninput="updateExpField('${exp.id}', 'desc', this.value)" placeholder="• Menangani dan menyelesaikan rata-rata 15+ tiket teknis harian...&#10;• Membantu konfigurasi perangkat jaringan lokal kantor..." class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 bg-white leading-relaxed">${exp.desc}</textarea>
+          </div>
+        `;
+        container.appendChild(itemHtml);
+      });
+    }
+
+    function renderCV() {
+      // Data Diri
+      const name = document.getElementById('inp-name').value.trim() || 'NAMA LENGKAP ANDA';
+      const loc = document.getElementById('inp-location').value.trim() || 'Kota Domisili';
+      const phone = document.getElementById('inp-phone').value.trim() || '+62 8xx-xxxx-xxxx';
+      const email = document.getElementById('inp-email').value.trim() || 'email@domain.com';
+      const linkedin = document.getElementById('inp-linkedin').value.trim();
+
+      document.getElementById('out-name').textContent = name;
+      document.getElementById('out-location').textContent = loc;
+      document.getElementById('out-phone').textContent = phone;
+      document.getElementById('out-email').textContent = email;
+
+      const linkedinWrap = document.getElementById('out-linkedin-wrap');
+      if (linkedin) {
+        document.getElementById('out-linkedin').textContent = linkedin;
+        linkedinWrap.classList.remove('hidden');
+      } else {
+        linkedinWrap.classList.add('hidden');
+      }
+
+      // Ringkasan
+      const summary = document.getElementById('inp-summary').value.trim();
+      const secSummary = document.getElementById('sec-summary');
+      if (summary) {
+        document.getElementById('out-summary').textContent = summary;
+        secSummary.classList.remove('hidden');
+      } else {
+        secSummary.classList.add('hidden');
+      }
+
+      // Pengalaman Kerja
+      const expContainer = document.getElementById('out-experience-list');
+      const secExp = document.getElementById('sec-experience');
+      expContainer.innerHTML = '';
+
+      if (experiences.length > 0) {
+        secExp.classList.remove('hidden');
+        experiences.forEach(exp => {
+          const bullets = exp.desc.split('\n').filter(b => b.trim().length > 0);
+          const bulletsHtml = bullets.map(b => {
+            const clean = b.replace(/^[•\-\*]\s*/, '');
+            return `<li>${clean}</li>`;
+          }).join('');
+
+          const div = document.createElement('div');
+          div.className = 'text-[11px]';
+          div.innerHTML = `
+            <div class="flex justify-between items-baseline">
+              <span class="font-bold text-slate-900">${exp.role || 'Posisi Jabatan'}</span>
+              <span class="font-bold text-slate-700 text-right">${exp.period || 'Periode'}</span>
+            </div>
+            <div class="text-slate-600 font-medium mb-1">${exp.company || 'Perusahaan'} ${exp.city ? '• ' + exp.city : ''}</div>
+            <ul class="list-disc list-inside space-y-0.5 text-slate-700 leading-relaxed">
+              ${bulletsHtml || '<li>Melaksanakan tanggung jawab operasional harian sesuai target yang ditentukan.</li>'}
+            </ul>
+          `;
+          expContainer.appendChild(div);
+        });
+      } else {
+        secExp.classList.add('hidden');
+      }
+
+      // Pendidikan
+      const school = document.getElementById('inp-edu-school').value.trim();
+      const degree = document.getElementById('inp-edu-degree').value.trim();
+      const year = document.getElementById('inp-edu-year').value.trim();
+      const gpa = document.getElementById('inp-edu-gpa').value.trim();
+      const notes = document.getElementById('inp-edu-notes').value.trim();
+
+      document.getElementById('out-edu-school').textContent = school || 'Universitas / Sekolah';
+      document.getElementById('out-edu-degree').textContent = degree || 'Jenjang & Jurusan';
+      document.getElementById('out-edu-year').textContent = year || 'Tahun';
+      document.getElementById('out-edu-gpa').textContent = gpa;
+      document.getElementById('out-edu-notes').textContent = notes;
+
+      // Keahlian
+      const hard = document.getElementById('inp-skills-hard').value.trim();
+      const soft = document.getElementById('inp-skills-soft').value.trim();
+      const lang = document.getElementById('inp-skills-lang').value.trim();
+
+      document.getElementById('out-skills-hard').textContent = hard || '-';
+      document.getElementById('out-skills-soft').textContent = soft || '-';
+      document.getElementById('out-skills-lang').textContent = lang || '-';
+
+      // Sertifikasi
+      const certs = document.getElementById('inp-certifications').value.trim();
+      const secCert = document.getElementById('sec-cert');
+      const certContainer = document.getElementById('out-certifications');
+      certContainer.innerHTML = '';
+
+      if (certs) {
+        secCert.classList.remove('hidden');
+        certs.split('\n').filter(c => c.trim().length > 0).forEach(c => {
+          const clean = c.replace(/^[•\-\*]\s*/, '');
+          const li = document.createElement('li');
+          li.textContent = clean;
+          certContainer.appendChild(li);
+        });
+      } else {
+        secCert.classList.add('hidden');
+      }
+    }
+
+    function toggleQuickSummary() {
+      const box = document.getElementById('quick-summary-box');
+      box.classList.toggle('hidden');
+    }
+
+    function applySummaryTemplate(type) {
+      const input = document.getElementById('inp-summary');
+      if (type === 'fresh_grad') {
+        input.value = "Lulusan baru yang berdedikasi dan memiliki dasar teori yang kuat dalam bidang keilmuan terkait. Cepat beradaptasi dengan lingkungan baru, terbiasa mengoperasikan aplikasi perkantoran modern, serta siap berkontribusi secara produktif dan profesional dalam lingkungan kerja tim.";
+      } else if (type === 'admin') {
+        input.value = "Staf Administrasi dengan pengalaman dalam pengelolaan arsip digital, pencatatan data inventaris, dan pembuatan laporan mingguan menggunakan Microsoft Excel. Memiliki ketelitian tinggi, terbiasa dengan tenggat waktu padat, dan mampu berkomunikasi dengan berbagai divisi secara efektif.";
+      } else if (type === 'it_support') {
+        input.value = "Profesional IT Support dengan pengalaman 1 tahun dalam pemeliharaan hardware, instalasi software, dan penanganan kendala jaringan lokal (LAN/WLAN). Terbiasa menyelesaikan tiket keluhan dengan respon cepat (SLA 95%) serta berorientasi pada kepuasan pengguna.";
+      } else if (type === 'sales_kasir') {
+        input.value = "Pramuniaga & Kasir berpengalaman dalam melayani ratusan transaksi pembayaran harian dengan tingkat akurasi pencatatan kas 100%. Memiliki kemampuan komunikasi persuasif, ramah, dan cekatan dalam mengelola stok display barang.";
+      }
+      document.getElementById('quick-summary-box').classList.add('hidden');
+      renderCV();
+      showToast('Template ringkasan diterapkan!');
+    }
+
+    function loadSampleData() {
+      document.getElementById('inp-name').value = "AHMAD FAUZI";
+      document.getElementById('inp-location').value = "Jakarta Selatan, DKI Jakarta";
+      document.getElementById('inp-phone').value = "+62 812-3456-7890";
+      document.getElementById('inp-email').value = "ahmad.fauzi@email.com";
+      document.getElementById('inp-linkedin').value = "linkedin.com/in/ahmadfauzi";
+
+      document.getElementById('inp-summary').value = "Staf Administrasi & IT Support dengan pengalaman kerja 1 tahun di industri retail dan jasa. Terbiasa mengelola pemeliharaan 50+ unit perangkat komputer kantor, administrasi berkas, serta pengolahan data inventaris menggunakan Microsoft Excel (VLOOKUP, Pivot Table). Memiliki komunikasi yang baik, teliti, dan siap berkontribusi penuh waktu.";
+
+      experiences = [
+        {
+          id: 'exp1',
+          role: 'IT Support & Helpdesk',
+          company: 'PT Sinar Nusantara Abadi',
+          city: 'Jakarta Pusat',
+          period: 'Jan 2024 – Sekarang',
+          desc: '• Menangani dan menyelesaikan rata-rata 15+ tiket kendala teknis harian (hardware, software, dan printer jaringan) dengan tingkat penyelesaian 95% tepat waktu.\n• Membantu konfigurasi dan pemeliharaan router MikroTik serta access point kantor untuk memastikan koneksi internet 80+ karyawan stabil.\n• Menyusun panduan singkat pemecahan masalah teknis mandiri yang berhasil mengurangi frekuensi keluhan berulang karyawan hingga 20%.'
+        },
+        {
+          id: 'exp2',
+          role: 'Staf Magang Administrasi & Data Entry',
+          company: 'CV Maju Digital Solusindo',
+          city: 'Tangerang',
+          period: 'Jul 2023 – Des 2023',
+          desc: '• Menginput dan memverifikasi data transaksi penjualan bulanan sebanyak 1.000+ data faktur ke dalam sistem internal perusahaan dengan akurasi 99%.\n• Membuat laporan rekapitulasi inventaris barang gudang secara mingguan menggunakan formula Microsoft Excel (VLOOKUP, HLOOKUP, Pivot Table).\n• Membantu digitalisasi 500+ arsip fisik dokumen kontrak lama ke format penyimpanan cloud yang rapi.'
+        }
+      ];
+
+      document.getElementById('inp-edu-school').value = "Universitas Budi Luhur";
+      document.getElementById('inp-edu-degree').value = "Sarjana Komputer (S.Kom) - Sistem Informasi";
+      document.getElementById('inp-edu-year').value = "2019 – 2023";
+      document.getElementById('inp-edu-gpa').value = "IPK: 3.52 / 4.00";
+      document.getElementById('inp-edu-notes').value = "Judul Skripsi: Sistem Informasi Inventaris Kantor Cabang";
+
+      document.getElementById('inp-skills-hard').value = "Microsoft Excel (VLOOKUP, Pivot), Jaringan LAN/WiFi, Troubleshooting PC, Google Workspace, Basic SQL";
+      document.getElementById('inp-skills-soft').value = "Komunikasi Pelanggan, Kerja Sama Tim, Ketelitian Administrasi, Problem Solving";
+      document.getElementById('inp-skills-lang').value = "Bahasa Indonesia (Fasih/Ibu), Bahasa Inggris (Menengah)";
+
+      document.getElementById('inp-certifications').value = "• Google IT Support Professional Certificate — Coursera (2023)\n• Pelatihan Administrasi Perkantoran Modern — Balai Latihan Kerja (2023)";
+
+      renderExperienceInputs();
+      renderCV();
+      setAccentColor('navy');
+      showToast('Contoh data berhasil dimuat!');
+    }
+
+    function switchMobileTab(tab) {
+      const btnEditor = document.getElementById('tab-btn-editor');
+      const btnPreview = document.getElementById('tab-btn-preview');
+      const paneEditor = document.getElementById('pane-editor');
+      const panePreview = document.getElementById('pane-preview');
+
+      if (tab === 'editor') {
+        btnEditor.className = "py-1.5 rounded-lg bg-white text-blue-700 shadow-sm transition";
+        btnPreview.className = "py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
+        paneEditor.classList.remove('hidden');
+        panePreview.classList.add('hidden');
+      } else {
+        btnPreview.className = "py-1.5 rounded-lg bg-white text-blue-700 shadow-sm transition";
+        btnEditor.className = "py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
+        panePreview.classList.remove('hidden');
+        paneEditor.classList.add('hidden');
+      }
+    }
+
+    function downloadPDF() {
+      showToast('Sedang membuat file PDF A4...');
+      const element = document.getElementById('cv-preview');
+      const name = document.getElementById('inp-name').value.trim() || 'CV';
+      const cleanName = name.replace(/[^a-zA-Z0-9]/g, '_');
+
+      const opt = {
+        margin: [0, 0, 0, 0],
+        filename: `CV_ATS_${cleanName}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        showToast('PDF berhasil diunduh!');
+      }).catch(err => {
+        console.error(err);
+        window.print();
+      });
+    }
+
+    function copyPlainText() {
+      const name = document.getElementById('out-name').textContent;
+      const contact = `${document.getElementById('out-location').textContent} | ${document.getElementById('out-phone').textContent} | ${document.getElementById('out-email').textContent}`;
+      const summary = document.getElementById('out-summary').textContent;
+
+      let expText = '';
+      experiences.forEach(e => {
+        expText += `\n${e.role} - ${e.company} (${e.period})\n${e.desc}\n`;
+      });
+
+      const fullText = `=== ${name} ===\n${contact}\n\n[RINGKASAN]\n${summary}\n\n[PENGALAMAN KERJA]${expText}\n[PENDIDIKAN]\n${document.getElementById('out-edu-degree').textContent} - ${document.getElementById('out-edu-school').textContent} (${document.getElementById('out-edu-year').textContent})\n\n[KEAHLIAN]\nHard Skills: ${document.getElementById('out-skills-hard').textContent}\nSoft Skills: ${document.getElementById('out-skills-soft').textContent}`;
+
+      navigator.clipboard.writeText(fullText).then(() => {
+        showToast('Teks mentah CV berhasil disalin ke clipboard!');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

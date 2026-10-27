@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cv-ats-cepat.vercel.app/sitemap.xml
