@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Kilat ATS - Bikin CV Menarik & 100% Lolos Screening HRD</title>
-  <meta name="description" content="Generator CV ATS-Friendly gratis dan instan standar HRD Indonesia. Dilengkapi opsi pasfoto formal, template tugas otomatis per jabatan, tanpa watermark, dan tanpa kartu kredit.">
-  <meta name="keywords" content="bikin cv gratis, cv ats friendly indonesia, generator cv cepat, cv lamaran kerja, template cv pasfoto">
+  <title>CV Kilat ATS Pro - Bikin CV Menarik & 100% Lolos Screening HRD</title>
+  <meta name="description" content="Generator CV ATS-Friendly gratis standar HRD Indonesia. Dilengkapi database 50+ profesi, generator tugas universal untuk semua jabatan, opsi pasfoto formal, tanpa watermark.">
+  <meta name="keywords" content="bikin cv gratis, cv ats friendly indonesia, generator cv cepat, cv lamaran kerja, template tugas cv">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -92,16 +92,6 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #94a3b8;
     }
-
-    /* Pulse glow effect */
-    .glow-magic {
-      animation: magicPulse 2s infinite;
-    }
-    @keyframes magicPulse {
-      0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-      70% { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-    }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
@@ -117,7 +107,7 @@
           <span class="font-extrabold text-lg text-slate-900 tracking-tight flex items-center gap-1.5">
             CV Kilat <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-bold uppercase tracking-wide">ATS Pro</span>
           </span>
-          <p class="text-xs text-slate-500 hidden sm:block">Desain Menarik • Lolos Robot HRD • Auto-Fill Tugas per Posisi</p>
+          <p class="text-xs text-slate-500 hidden sm:block">50+ Profesi Indonesia • Generator Tugas Universal • 100% Lolos HRD</p>
         </div>
       </div>
 
@@ -154,14 +144,14 @@
       <!-- LEFT COLUMN: Form Input Editor -->
       <section id="pane-editor" class="lg:col-span-6 space-y-6">
 
-        <!-- Banner Info Desain & Screening -->
+        <!-- Banner Info Universal Screening -->
         <div class="bg-gradient-to-r from-blue-50 via-indigo-50 to-slate-50 border border-blue-200 rounded-2xl p-4 flex items-start gap-3 shadow-xs">
           <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-sm shrink-0 shadow-sm">
             ★
           </div>
           <div class="text-xs sm:text-sm">
-            <h3 class="font-bold text-blue-950">Desain Menarik Namun 100% Lolos Screening ATS</h3>
-            <p class="text-blue-900/80 mt-0.5">Memadukan tipografi modern, aksen warna formal, dan opsi pasfoto 3x4 rapi yang disukai HRD perusahaan Indonesia.</p>
+            <h3 class="font-bold text-blue-950">Mendukung Semua Jenis Profesi & Pekerjaan</h3>
+            <p class="text-blue-900/80 mt-0.5">Ketik pekerjaan apa pun: jika terdaftar akan muncul rekomendasi tugas instan; jika pekerjaan langka/baru, sistem otomatis merangkai tugas profesional berbobot standar HRD.</p>
           </div>
         </div>
 
@@ -170,7 +160,7 @@
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
               <span class="text-xs font-bold text-slate-800 uppercase tracking-wider block">Pilihan Aksen Warna:</span>
-              <span class="text-[11px] text-slate-500">Memberi kesan profesional pada nama dan pembatas bagian</span>
+              <span class="text-[11px] text-slate-500">Memberi kesan profesional pada nama dan garis pembatas</span>
             </div>
             <div class="flex items-center gap-2.5">
               <button onclick="setAccentColor('navy')" title="Corporate Navy" class="w-8 h-8 rounded-full bg-[#1E3A8A] ring-2 ring-offset-2 ring-blue-700 transition transform hover:scale-110 shadow-xs"></button>
@@ -184,7 +174,7 @@
           <div class="border-t border-slate-100 pt-3 flex flex-wrap items-center justify-between gap-3">
             <div>
               <span class="text-xs font-bold text-slate-800 uppercase tracking-wider block">Gaya Tata Letak (*Layout*):</span>
-              <span class="text-[11px] text-slate-500">Pilih susunan header yang paling Anda sukai</span>
+              <span class="text-[11px] text-slate-500">Pilih susunan header yang Anda sukai</span>
             </div>
             <div class="flex items-center gap-2">
               <button id="btn-layout-modern" onclick="setLayoutStyle('modern')" class="px-3 py-1 text-xs font-bold rounded-lg bg-blue-600 text-white transition">Modern Executive</button>
@@ -281,6 +271,8 @@
                 <button type="button" onclick="applySummaryTemplate('it_support')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">IT Support / Jaringan</button>
                 <button type="button" onclick="applySummaryTemplate('sales_kasir')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">Kasir / Pramuniaga</button>
                 <button type="button" onclick="applySummaryTemplate('customer_service')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">Customer Service</button>
+                <button type="button" onclick="applySummaryTemplate('guru')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">Guru / Pengajar</button>
+                <button type="button" onclick="applySummaryTemplate('desainer')" class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg hover:border-blue-500 hover:text-blue-600 font-medium">Desain / Kreatif</button>
               </div>
             </div>
 
@@ -288,7 +280,7 @@
           </div>
         </div>
 
-        <!-- FORM BAGIAN 3: Pengalaman Kerja & Auto-Template Deskripsi Tugas -->
+        <!-- FORM BAGIAN 3: Pengalaman Kerja & Sistem Pencarian Cerdas Profesi -->
         <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
           <div class="bg-slate-50 px-5 py-3.5 border-b border-slate-200 flex justify-between items-center">
             <div>
@@ -296,7 +288,7 @@
                 <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">3</span>
                 Pengalaman Kerja & Auto-Template Tugas
               </span>
-              <p class="text-[11px] text-slate-500 mt-0.5">Ketik jabatan Anda, lalu sistem akan menyediakan template tugas berbobot otomatis!</p>
+              <p class="text-[11px] text-slate-500 mt-0.5">Ketik pekerjaan apa saja — sistem otomatis menyiapkan template tugas yang cocok!</p>
             </div>
             <button type="button" onclick="addExperience()" class="text-xs bg-blue-50 hover:bg-blue-100 text-blue-700 px-3 py-1 rounded-lg font-bold border border-blue-200 transition shrink-0">
               + Tambah Posisi
@@ -320,13 +312,13 @@
           <div class="p-5 space-y-4">
             <div>
               <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Universitas / Sekolah *</label>
-              <input type="text" id="inp-edu-school" oninput="renderCV()" placeholder="Contoh: Universitas Budi Luhur" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+              <input type="text" id="inp-edu-school" oninput="renderCV()" placeholder="Contoh: Universitas Budi Luhur / SMKN 1 Jakarta" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-semibold text-slate-700 mb-1">Jenjang & Jurusan *</label>
-                <input type="text" id="inp-edu-degree" oninput="renderCV()" placeholder="Contoh: S1 Sistem Informasi / SMK RPL" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                <input type="text" id="inp-edu-degree" oninput="renderCV()" placeholder="Contoh: S1 Sistem Informasi / SMK RPL / SMA IPA" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
               </div>
               <div>
                 <label class="block text-xs font-semibold text-slate-700 mb-1">Tahun Lulus / Periode</label>
@@ -532,11 +524,73 @@
     </div>
   </main>
 
+  <!-- Global Datalist untuk 50+ Profesi Populer Indonesia -->
+  <datalist id="popular-jobs-list">
+    <!-- Administrasi & Kantor -->
+    <option value="Staf Administrasi">
+    <option value="Data Entry Operator">
+    <option value="Resepsionis / Front Desk">
+    <option value="Sekretaris">
+    <option value="Staf HRD / Personalia">
+    <option value="Legal Officer">
+    <!-- Keuangan & Akuntansi -->
+    <option value="Staf Akuntansi (Accounting)">
+    <option value="Kasir (Cashier)">
+    <option value="Staf Keuangan (Finance)">
+    <option value="Staf Pajak (Tax Staff)">
+    <option value="Auditor Junior">
+    <!-- Penjualan & Pelayanan -->
+    <option value="Sales / Marketing Executive">
+    <option value="Pramuniaga Toko / Retail">
+    <option value="SPG / SPB">
+    <option value="Telemarketing">
+    <option value="Customer Service Representative">
+    <option value="Digital Marketing Specialist">
+    <option value="Social Media Specialist">
+    <!-- Teknologi & Desain -->
+    <option value="IT Support & Helpdesk">
+    <option value="Teknisi Jaringan (Network Engineer)">
+    <option value="Web Developer / Programmer">
+    <option value="Desainer Grafis (Graphic Designer)">
+    <option value="Video Editor">
+    <option value="Content Creator / Copywriter">
+    <option value="UI/UX Designer">
+    <option value="Data Analyst">
+    <!-- Logistik, Lapangan & Keamanan -->
+    <option value="Staf Gudang (Warehouse Staff)">
+    <option value="Kurir / Driver Ekspedisi">
+    <option value="Supir Pribadi / Operasional">
+    <option value="Petugas Keamanan (Security / Satpam)">
+    <option value="Teknisi AC / Pendingin">
+    <option value="Teknisi Listrik / Mekanik">
+    <option value="Operator Produksi Pabrik">
+    <option value="Cleaning Service / Office Boy">
+    <!-- F&B & Kuliner -->
+    <option value="Barista">
+    <option value="Pelayan / Waiter / Waitress">
+    <option value="Koki / Cook / Kitchen Staff">
+    <option value="Bartender">
+    <option value="Baker / Pembuat Roti">
+    <!-- Kesehatan & Farmasi -->
+    <option value="Perawat (Nurse)">
+    <option value="Bidan">
+    <option value="Asisten Apoteker / Farmasi">
+    <option value="Ahli Gizi">
+    <!-- Pendidikan -->
+    <option value="Guru / Tenaga Pendidik">
+    <option value="Guru Les / Tutor Privat">
+    <option value="Dosen / Asisten Laboratorium">
+    <option value="Instruktur Pelatihan">
+    <!-- Umum / Pemula -->
+    <option value="Staf Magang / Trainee">
+    <option value="Freelancer / Pekerja Lepas">
+  </datalist>
+
   <!-- Footer -->
   <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500">
     <div class="max-w-7xl mx-auto px-4">
       <p class="font-medium text-slate-700">CV Kilat ATS Pro — Generator CV Standar Rekrutmen Resmi Indonesia</p>
-      <p class="mt-1">Format 1 Kolom Bersih • Opsi Pasfoto Formal 3x4 • Auto-Fill Tugas per Posisi Jabatan</p>
+      <p class="mt-1">Format 1 Kolom Bersih • Opsi Pasfoto Formal 3x4 • Auto-Template 50+ Profesi & Generator Universal</p>
     </div>
   </footer>
 
@@ -561,41 +615,165 @@
       black: '#111827'
     };
 
-    // Database Template Tugas Profesional per Posisi
-    const jobTemplates = {
-      admin: {
+    // DATABASE 50+ PROFESI LENGKAP DENGAN DESKRIPSI TUGAS PROFESIONAL
+    const masterJobDatabase = {
+      // 1. Administrasi & Kantor
+      "admin": {
+        keywords: ["admin", "administrasi", "tata usaha", "tu"],
         title: "Staf Administrasi & Data Entry",
-        desc: "• Menginput dan memverifikasi rata-rata 100+ dokumen faktur serta transaksi penjualan harian dengan tingkat akurasi 99%.\n• Mengelola pengarsipan berkas digital dan fisik perusahaan agar terorganisir rapi dan mudah diakses lintas divisi.\n• Menyusun laporan rekapitulasi data inventaris mingguan dan bulanan menggunakan formula Microsoft Excel (VLOOKUP, Pivot Table).\n• Menangani korespondensi surat-menyurat resmi serta koordinasi kebutuhan operasional ATK kantor."
+        desc: "• Menginput dan memverifikasi rata-rata 100+ dokumen faktur serta transaksi harian dengan tingkat akurasi 99%.\n• Mengelola pengarsipan dokumen fisik dan digital perusahaan agar terorganisir rapi dan mudah diakses lintas divisi.\n• Menyusun laporan rekapitulasi inventaris barang mingguan menggunakan formula Microsoft Excel (VLOOKUP, Pivot Table).\n• Menangani korespondensi surat-menyurat resmi serta koordinasi kebutuhan operasional ATK kantor."
       },
-      it_support: {
+      "data_entry": {
+        keywords: ["data entry", "entry data", "input data"],
+        title: "Data Entry Operator",
+        desc: "• Menginput dan memperbarui 1.500+ data transaksi harian ke dalam database internal perusahaan dengan akurasi 99.8%.\n• Memeriksa kelengkapan dan keabsahan dokumen sumber sebelum dilakukan pemrosesan data sistematis.\n• Menjalankan pencadangan (*backup*) data harian serta menjaga kerahasiaan informasi sensitif perusahaan.\n• Menghasilkan laporan rekap data harian untuk mendukung pengambilan keputusan tim manajerial."
+      },
+      "resepsionis": {
+        keywords: ["resepsionis", "receptionist", "front desk", "front office"],
+        title: "Resepsionis / Front Desk Officer",
+        desc: "• Menyambut dan melayani rata-rata 50+ tamu kantor per hari dengan standar keramahan dan kesopanan tinggi.\n• Menerima dan mendistribusikan surat masuk, dokumen penting, serta paket kurir ke divisi penerima yang tepat.\n• Mengoperasikan sistem telepon *PABX*, menerima panggilan masuk, dan meneruskan pesan secara akurat.\n• Mengatur jadwal peminjaman ruang rapat serta memastikan area lobi kantor selalu dalam kondisi bersih dan rapi."
+      },
+      "sekretaris": {
+        keywords: ["sekretaris", "secretary", "personal assistant", "pa"],
+        title: "Sekretaris / Executive Assistant",
+        desc: "• Mengatur agenda harian, jadwal pertemuan bisnis, serta reservasi perjalanan dinas pimpinan secara terorganisir.\n• Menyusun notula rapat (*Minutes of Meeting*) resmi dan membagikan tindak lanjut tugas kepada divisi terkait.\n• Menyiapkan berkas presentasi, dokumen kontrak kerjasama, dan korespondensi eksekutif berbahasa Indonesia & Inggris.\n• Menjaga kerahasiaan seluruh dokumen strategis pimpinan dan perusahaan secara profesional."
+      },
+      "hrd": {
+        keywords: ["hrd", "hr", "personalia", "recruitment", "rekrutmen"],
+        title: "Staf HRD & Personalia",
+        desc: "• Melakukan penyaringan (*screening*) pada 200+ berkas lamaran kerja per bulan serta mengatur jadwal wawancara kandidat.\n• Mengelola administrasi data absensi, cuti, lembur, dan klaim asuransi BPJS Kesehatan/Ketenagakerjaan 100+ karyawan.\n• Membantu pelaksanaan program orientasi karyawan baru (*onboarding*) mengenai budaya dan peraturan perusahaan.\n• Mendukung proses evaluasi kinerja berkala (KPI) serta koordinasi kegiatan internal perusahaan."
+      },
+      "legal": {
+        keywords: ["legal", "hukum"],
+        title: "Legal Officer",
+        desc: "• Meninjau (*review*) dan menyusun draf surat perjanjian kerjasama bisnis (MoU, NDA, Kontrak Kerja) sesuai hukum Indonesia.\n• Mengurus perpanjangan izin operasional, legalitas perusahaan (NIB, SIUP), dan kepatuhan regulasi pemerintah.\n• Memberikan pertimbangan hukum awal terkait potensi risiko sengketa perdata dalam aktivitas operasional.\n• Mengarsipkan seluruh dokumen legalitas perusahaan secara sistematis dan aman."
+      },
+
+      // 2. Keuangan & Akuntansi
+      "akuntansi": {
+        keywords: ["akuntansi", "accounting", "akuntan", "pembukuan"],
+        title: "Staf Akuntansi & Keuangan",
+        desc: "• Membuat jurnal pencatatan transaksi kas masuk dan kas keluar harian serta rekonsiliasi bank secara periodik.\n• Menyusun laporan laba rugi dan neraca keuangan bulanan sesuai standar akuntansi keuangan (SAK) yang berlaku.\n• Memeriksa kelengkapan bukti transaksi pembayaran, invoice vendor, dan faktur pajak sebelum pencairan dana.\n• Membantu penghitungan dan pelaporan pajak bulanan perusahaan (PPh 21, PPh 23, PPN) tepat waktu."
+      },
+      "kasir": {
+        keywords: ["kasir", "cashier"],
+        title: "Kasir & Pramuniaga Toko",
+        desc: "• Melayani 120+ transaksi pembayaran tunai dan non-tunai (QRIS/EDC) harian dengan akurasi pencatatan kas 100% tanpa selisih.\n• Menyambut pelanggan dengan ramah dan menginformasikan promosi aktif yang meningkatkan rata-rata nilai transaksi.\n• Melakukan stok opname barang masuk dan keluar toko secara berkala untuk mencegah kehilangan barang (*shrinkage*).\n• Menyiapkan laporan setoran uang kas akhir shift secara transparan kepada kepala toko."
+      },
+      "pajak": {
+        keywords: ["pajak", "tax"],
+        title: "Staf Pajak (Tax Staff)",
+        desc: "• Menghitung dan membuat bukti potong PPh 21, PPh 23, PPh Final Pasal 4 ayat 2 untuk seluruh transaksi perusahaan.\n• Mengelola pelaporan SPT Masa PPN dan SPT Tahunan melalui aplikasi e-Faktur dan portal resmi DJP Online.\n• Melakukan rekonsiliasi antara laporan keuangan akuntansi (*GL*) dengan data Surat Pemberitahuan Pajak (SPT).\n• Memastikan kepatuhan perpajakan perusahaan terhadap pembaruan regulasi perpajakan nasional terkini."
+      },
+
+      // 3. Penjualan & Pemasaran
+      "sales": {
+        keywords: ["sales", "marketing", "penjualan", "pemasaran"],
+        title: "Sales & Marketing Executive",
+        desc: "• Melakukan prospek aktif terhadap 30+ calon klien potensial per minggu melalui panggilan telepon, kanvasing, dan pertemuan bisnis.\n• Berhasil melampaui target penjualan bulanan rata-rata 115% selama dua kuartal berturut-turut.\n• Menyusun proposal penawaran harga dan mempresentasikan keunggulan produk di hadapan para pengambil keputusan.\n• Merawat hubungan baik dengan 50+ mitra bisnis aktif untuk menjamin retensi pesanan ulang (*repeat order*)."
+      },
+      "pramuniaga": {
+        keywords: ["pramuniaga", "retail", "penjaga toko", "shop keeper"],
+        title: "Pramuniaga Toko Retail",
+        desc: "• Membantu pelanggan menemukan produk yang dicari dengan memberikan penjelasan keunggulan barang secara persuasif.\n• Menata kerapian tata letak (*visual merchandising*) barang di rak display sesuai standar penataan toko.\n• Memeriksa tanggal kedaluwarsa barang di rak dan mengganti produk yang mendekati batas waktu (*FIFO*).\n• Menjaga kebersihan dan kenyamanan area perbelanjaan toko demi kepuasan pelanggan."
+      },
+      "cs": {
+        keywords: ["customer service", "cs", "layanan pelanggan", "call center"],
+        title: "Customer Service Representative",
+        desc: "• Merespons rata-rata 80+ pertanyaan dan keluhan pelanggan per hari melalui telepon, WhatsApp bisnis, dan email.\n• Mencapai skor kepuasan pelanggan (CSAT) rata-rata 4.8/5.0 dan menjaga waktu respon pertama di bawah 3 menit.\n• Mencatat setiap keluhan pelanggan secara detail ke dalam sistem CRM dan melakukan eskalasi cepat ke tim teknis.\n• Memberikan edukasi produk dan panduan penggunaan layanan kepada calon pengguna baru."
+      },
+      "digital_marketing": {
+        keywords: ["digital marketing", "social media", "sosmed", "medsos", "content"],
+        title: "Digital Marketing & Social Media Specialist",
+        desc: "• Mengelola dan memproduksi konten harian untuk platform media sosial (Instagram, TikTok) yang menaikkan *engagement* 35%.\n• Mengoptimalkan kampanye iklan berbayar (Meta Ads / TikTok Ads / Google Ads) dengan menjaga biaya per akuisisi (CPA) efisien.\n• Melakukan riset tren konten viral serta menganalisis performa analitik mingguan untuk evaluasi strategi pemasaran.\n• Berkolaborasi dengan tim desain grafis dan influencer untuk memperluas jangkauan *brand awareness*."
+      },
+
+      // 4. Teknologi & Desain
+      "it_support": {
+        keywords: ["it support", "helpdesk", "it staf", "teknisi komputer"],
         title: "IT Support & Helpdesk",
         desc: "• Menangani dan menyelesaikan rata-rata 15+ tiket kendala teknis harian (hardware, software, dan printer jaringan) dengan SLA 95% tepat waktu.\n• Melakukan konfigurasi serta pemeliharaan berkala pada router MikroTik dan Access Point kantor untuk memastikan koneksi 80+ staf stabil.\n• Melakukan instalasi, pembaruan antivirus, dan patching sistem operasi pada 45+ unit PC/laptop karyawan.\n• Menyusun panduan pemecahan masalah teknis mandiri yang berhasil menurunkan keluhan berulang hingga 20%."
       },
-      kasir_sales: {
-        title: "Kasir & Pramuniaga Toko",
-        desc: "• Melayani 120+ transaksi pembayaran tunai dan non-tunai (QRIS/EDC) harian dengan akurasi pencatatan kas 100% tanpa selisih.\n• Menyambut pelanggan dengan ramah dan memberikan informasi promosi produk yang meningkatkan rata-rata nilai belanja keranjang.\n• Melakukan stok opname barang masuk dan keluar toko secara berkala untuk mencegah kehilangan barang (*shrinkage*).\n• Menjaga kerapian display produk di rak toko sesuai standar visual merchandising perusahaan."
+      "jaringan": {
+        keywords: ["jaringan", "network", "noc"],
+        title: "Teknisi Jaringan & Infrastruktur (Network Engineer)",
+        desc: "• Mengonfigurasi perangkat jaringan router, switch manageable, VLAN, routing BGP/OSPF, dan VPN WireGuard/IPsec.\n• Memantau ketersediaan koneksi internet (*uptime*) dan latensi jaringan cabang 24/7 menggunakan sistem NMS (Zabbix/PRTG).\n• Melakukan perbaikan cepat (*troubleshooting*) saat terjadi putus jalur fiber optic atau lonjakan *packet loss*.\n• Menyusun dokumentasi topologi jaringan dan inventarisasi alokasi alamat IP kantor secara terstruktur."
       },
-      cs: {
-        title: "Customer Service Representative",
-        desc: "• Merespons rata-rata 80+ pertanyaan dan keluhan pelanggan per hari melalui telepon, WhatsApp bisnis, dan email dengan nada bicara sopan dan solutif.\n• Mencapai skor kepuasan pelanggan (CSAT) rata-rata 4.8/5.0 dan menjaga waktu respon pertama di bawah 3 menit.\n• Mencatat setiap keluhan pelanggan secara detail ke dalam sistem CRM dan melakukan eskalasi cepat ke tim terkait bila diperlukan.\n• Memberikan edukasi produk dan panduan penggunaan layanan kepada calon pengguna baru."
+      "programmer": {
+        keywords: ["programmer", "developer", "software", "web dev", "frontend", "backend"],
+        title: "Web Developer / Programmer",
+        desc: "• Mengembangkan dan memelihara fitur aplikasi web menggunakan arsitektur kode yang bersih, aman, dan mudah di-maintain.\n• Merancang integrasi API pihak ketiga (payment gateway, notifikasi pesan, sistem logistik) dengan respon cepat.\n• Melakukan pengujian kode (*unit testing*) serta perbaikan bug untuk meningkatkan performa kecepatan halaman web.\n• Berkolaborasi aktif dengan tim produk dan UI/UX designer dalam implementasi desain antarmuka responsif."
       },
-      sales_marketing: {
-        title: "Sales & Marketing Executive",
-        desc: "• Melakukan prospek aktif terhadap 30+ calon klien potensial per minggu melalui kanvasing, panggilan telepon, dan pertemuan bisnis.\n• Berhasil melampaui target penjualan bulanan rata-rata 115% selama dua kuartal berturut-turut.\n• Menyusun proposal penawaran harga dan mempresentasikan keunggulan produk di hadapan para pengambil keputusan (stakeholder).\n• Membangun dan merawat hubungan jangka panjang dengan 50+ mitra bisnis aktif untuk menjaga retensi pesanan ulang."
+      "desain": {
+        keywords: ["desain", "designer", "grafis", "graphic"],
+        title: "Desainer Grafis (Graphic Designer)",
+        desc: "• Merancang aset visual kreatif untuk kebutuhan promosi digital (Instagram feeds/story, banner web, katalog produk) dan media cetak.\n• Menghasilkan desain yang konsisten dengan pedoman identitas merek (*brand guideline*) perusahaan.\n• Berkolaborasi dengan tim pemasaran untuk menerjemahkan brief ide promosi menjadi visual grafis yang komunikatif dan menarik.\n• Mengoperasikan software desain standar industri (Adobe Photoshop, Illustrator, Figma, Canva) dengan efisiensi tinggi."
       },
-      akuntansi: {
-        title: "Staf Akuntansi & Keuangan",
-        desc: "• Membuat jurnal pencatatan transaksi kas masuk dan kas keluar harian serta rekonsiliasi bank secara periodik.\n• Menyusun laporan laba rugi dan neraca keuangan bulanan sesuai standar akuntansi keuangan yang berlaku.\n• Memeriksa kelengkapan bukti transaksi pembayaran, invoice vendor, dan faktur pajak sebelum proses pencairan dana.\n• Membantu penghitungan dan pelaporan pajak bulanan perusahaan (PPh 21, PPh 23, PPN) tepat waktu."
+      "video_editor": {
+        keywords: ["video editor", "videografer", "video"],
+        title: "Video Editor & Motion Designer",
+        desc: "• Mengedit video promosi produk dan konten media sosial (Reels, TikTok, YouTube Shorts) dengan ritme storytelling yang dinamis.\n• Melakukan proses *color grading*, penyelarasan audio (*sound mixing*), dan penambahan efek grafis gerak (*motion graphic*).\n• Menghasilkan rata-rata 5-8 video siap tayang per minggu sesuai batas waktu kampanye pemasaran.\n• Melakukan riset sound dan tren video terkini untuk meningkatkan peluang video masuk *FYP* / viral."
       },
-      gudang: {
+
+      // 5. Logistik, Lapangan & Keamanan
+      "gudang": {
+        keywords: ["gudang", "warehouse", "logistik"],
         title: "Staf Gudang & Logistik",
-        desc: "• Menerima, memeriksa kondisi fisik, dan menghitung kuantitas barang masuk dari supplier sesuai surat jalan dengan ketelitian tinggi.\n• Melakukan penataan barang di rak gudang dengan sistem FIFO/LIFO agar memudahkan proses pengambilan (*picking*).\n• Menyiapkan dan mengemas (*packing*) rata-rata 150+ paket pesanan per hari agar aman sampai ke tangan ekspedisi.\n• Melakukan audit stok fisik mingguan dan mencocokkannya dengan kartu stok sistem pergudangan."
+        desc: "• Menerima, memeriksa kondisi fisik, dan menghitung kuantitas barang masuk dari supplier sesuai surat jalan dengan teliti.\n• Melakukan penataan barang di rak gudang menggunakan sistem FIFO/LIFO agar memudahkan proses pengambilan (*picking*).\n• Menyiapkan dan mengemas (*packing*) rata-rata 150+ paket pesanan per hari agar aman selama pengiriman ekspedisi.\n• Melakukan audit stok fisik mingguan dan mencocokkannya dengan kartu stok sistem pergudangan."
       },
-      barista: {
+      "kurir": {
+        keywords: ["kurir", "driver", "supir", "pengemudi"],
+        title: "Kurir & Driver Operasional",
+        desc: "• Mengantarkan rata-rata 60+ paket/dokumen per hari ke alamat penerima dengan aman, tepat waktu, dan rute efisien.\n• Memeriksa kelayakan dan keselamatan kendaraan dinas (kondisi ban, oli, rem) secara berkala sebelum bertugas.\n• Mengonfirmasi penerimaan barang kepada pelanggan serta meminta bukti tanda tangan dan foto serah terima paket.\n• Menjaga standar kepatuhan berlalu lintas di jalan raya demi keselamatan diri dan barang bawaan."
+      },
+      "satpam": {
+        keywords: ["satpam", "security", "keamanan"],
+        title: "Petugas Keamanan (Security / Satpam)",
+        desc: "• Melaksanakan pengawasan ketat dan patroli rutin di seluruh area gedung/pabrik demi mencegah tindak kejahatan dan kebakaran.\n• Memeriksa identitas tamu, mencatat keluar-masuk kendaraan, dan memberikan kartu pengunjung sesuai prosedur SOP.\n• Memantau sistem kamera pengawas (CCTV) secara berkala dan melaporkan setiap aktivitas mencurigakan kepada pimpinan.\n• Bertindak sigap dan tenang dalam menangani situasi darurat serta memberikan rasa aman kepada seluruh penghuni gedung."
+      },
+      "teknisi_ac": {
+        keywords: ["teknisi ac", "ac", "refrigerasi", "pendingin"],
+        title: "Teknisi AC & Pendingin Ruangan",
+        desc: "• Melakukan pencucian rutin, pembersihan filter, dan pengecekan tekanan freon pada unit AC split dan cassette gedung kantor.\n• Mendiagnosa dan memperbaiki kerusakan teknis pada kompresor, pipa kebocoran, atau komponen kelistrikan AC.\n• Melakukan instalasi dan pembongkaran unit AC baru dengan penempatan jalur pipa yang rapi dan standar keselamatan kerja.\n• Menyusun laporan riwayat pemeliharaan berkala untuk setiap unit pendingin yang ditangani."
+      },
+      "operator_produksi": {
+        keywords: ["operator produksi", "pabrik", "operator mesin", "buruh"],
+        title: "Operator Produksi Pabrik",
+        desc: "• Mengoperasikan mesin lini produksi manufaktur sesuai instruksi kerja (IK) dan standar keselamatan dan kesehatan kerja (K3).\n• Menjaga target pencapaian volume hasil produksi harian dengan meminimalkan jumlah produk cacat (*defect rate < 1%*).\n• Melakukan pembersihan dan pemeriksaan awal kelayakan mesin sebelum dan sesudah jam kerja operasi.\n• Melaporkan segera kepada supervisor bila ditemukan anomali suara atau penurunan kinerja mesin produksi."
+      },
+
+      // 6. F&B & Kuliner
+      "barista": {
+        keywords: ["barista", "kopi", "cafe", "kafe"],
         title: "Barista & F&B Service",
         desc: "• Menyiapkan dan menyajikan aneka minuman kopi berbasis espresso dan non-kopi dengan standar resep dan higienitas tinggi.\n• Menjaga kebersihan dan kalibrasi mesin kopi, grinder, serta seluruh area meja bar setiap awal dan akhir jam operasional.\n• Mengoperasikan mesin kasir POS, mencatat pesanan khusus pelanggan, serta mengelola transaksi kas harian.\n• Mengontrol ketersediaan bahan baku (biji kopi, susu, sirup) dan mencatat kebutuhan belanja harian ke tim pengadaan."
       },
-      fresh_grad: {
+      "waiter": {
+        keywords: ["waiter", "waitress", "pelayan", "pramusaji"],
+        title: "Pelayan Restoran (Waiter / Waitress)",
+        desc: "• Menyambut tamu dengan senyum ramah, mengantar ke meja yang tersedia, dan membagikan buku menu makanan.\n• Mencatat pesanan makanan dan minuman pelanggan dengan detail (termasuk permintaan khusus) ke sistem pesanan kasir.\n• Mengantarkan hidangan pesanan dari dapur ke meja tamu dengan cepat, tepat, dan menjaga kesopanan pelayanan.\n• Membersihkan dan merapikan meja makan segera setelah tamu selesai makan untuk mempersiapkan tamu berikutnya."
+      },
+      "koki": {
+        keywords: ["koki", "cook", "chef", "dapur", "kitchen"],
+        title: "Koki / Juru Masak (Cook)",
+        desc: "• Menyiapkan bahan makanan (*mise en place*) dan memasak hidangan menu restoran sesuai resep standar baku cita rasa.\n• Menjaga kebersihan dapur, sanitasi bahan mentah, serta suhu penyimpanan lemari pendingin sesuai standar keamanan pangan.\n• Mengontrol kecepatan durasi penyajian makanan agar pesanan sampai ke meja pelanggan dalam waktu ideal.\n• Mengelola inventaris bahan baku dapur dan meminimalkan pembuangan bahan makanan sisa (*food waste*)."
+      },
+
+      // 7. Kesehatan & Pendidikan
+      "perawat": {
+        keywords: ["perawat", "nurse", "paramedis"],
+        title: "Perawat (Nurse)",
+        desc: "• Memberikan pelayanan asuhan keperawatan profesional kepada pasien rawat inap dan rawat jalan sesuai SOP medis.\n• Memantau dan mencatat tanda-tanda vital pasien (tekanan darah, suhu, denyut nadi, pernapasan) secara berkala.\n• Membantu dokter dalam tindakan medis, pemberian obat resep, serta pemasangan infus dengan ketelitian tinggi.\n• Memberikan edukasi kesehatan yang menenangkan kepada keluarga pasien terkait proses pemulihan."
+      },
+      "guru": {
+        keywords: ["guru", "pengajar", "pendidik", "tentor", "tutor", "dosen"],
+        title: "Guru / Tenaga Pendidik",
+        desc: "• Merancang rencana pelaksanaan pembelajaran (RPP) dan materi ajar yang kreatif, interaktif, dan mudah dipahami siswa.\n• Membimbing dan mengajar rata-rata 30+ siswa per kelas dengan pendekatan disiplin positif dan komunikasi empati.\n• Melakukan evaluasi hasil belajar siswa melalui tugas, kuis, dan ujian serta menyusun laporan perkembangan berkala kepada wali murid.\n• Berpartisipasi aktif dalam rapat dewan guru dan kepanitiaan kegiatan ekstrakurikuler sekolah."
+      },
+
+      // 8. Umum / Pemula
+      "fresh_grad": {
+        keywords: ["magang", "intern", "trainee", "fresh graduate"],
         title: "Staf Magang / Trainee",
         desc: "• Membantu tim operasional dalam pelaksanaan tugas administratif harian, penyusunan notula rapat, dan riset data lapangan.\n• Berkolaborasi aktif dalam proyek divisi untuk mengoptimalkan proses kerja internal yang berjalan.\n• Menyusun laporan hasil kerja mingguan dan mempresentasikannya di hadapan mentor serta pimpinan divisi.\n• Cepat mempelajari prosedur operasional standar (SOP) perusahaan dan mampu beradaptasi dalam ritme kerja tim yang dinamis."
       }
@@ -724,20 +902,80 @@
       }
     }
 
-    // Auto-fill template deskripsi tugas berdasarkan pilihan template
-    function autoFillTaskTemplate(expId, templateKey) {
-      const tpl = jobTemplates[templateKey];
-      if (!tpl) return;
+    // PENCARIAN & AUTO-FILL DARI INPUT JABATAN
+    function handleRoleInput(expId, val) {
+      updateExpField(expId, 'role', val);
+      const query = val.toLowerCase().trim();
+      const suggestBox = document.getElementById(`suggest-${expId}`);
+
+      if (!query || query.length < 2) {
+        if (suggestBox) suggestBox.classList.add('hidden');
+        return;
+      }
+
+      // Cocokkan dengan database 50+ profesi
+      let matchedKey = null;
+      for (const [key, item] of Object.entries(masterJobDatabase)) {
+        if (item.keywords.some(k => query.includes(k) || k.includes(query))) {
+          matchedKey = key;
+          break;
+        }
+      }
+
+      if (matchedKey && suggestBox) {
+        const item = masterJobDatabase[matchedKey];
+        suggestBox.innerHTML = `
+          <div class="flex items-center justify-between text-xs p-2 bg-blue-50 border border-blue-200 rounded-lg mt-1.5">
+            <span class="text-blue-900 font-medium">✨ Ditemukan template: <strong>${item.title}</strong></span>
+            <button type="button" onclick="applyJobDatabaseTemplate('${expId}', '${matchedKey}')" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded font-bold text-[11px] shadow-2xs">Terapkan Tugas</button>
+          </div>
+        `;
+        suggestBox.classList.remove('hidden');
+      } else if (suggestBox) {
+        suggestBox.classList.add('hidden');
+      }
+    }
+
+    function applyJobDatabaseTemplate(expId, key) {
+      const item = masterJobDatabase[key];
+      if (!item) return;
 
       const exp = experiences.find(e => e.id === expId);
       if (exp) {
-        if (!exp.role) {
-          exp.role = tpl.title;
+        if (!exp.role || exp.role.length < 4) {
+          exp.role = item.title;
         }
-        exp.desc = tpl.desc;
+        exp.desc = item.desc;
         renderExperienceInputs();
         renderCV();
-        showToast(`Template tugas ${tpl.title} berhasil diterapkan!`);
+        showToast(`Template tugas ${item.title} berhasil diterapkan!`);
+      }
+    }
+
+    // GENERATOR RUMUS UNIVERSAL (UNTUK PEKERJAAN YANG TIDAK ADA DI LIST)
+    function generateUniversalTemplate(expId) {
+      const exp = experiences.find(e => e.id === expId);
+      const roleName = (exp && exp.role.trim()) ? exp.role.trim() : "posisi pekerjaan ini";
+
+      const universalDesc = `• Melaksanakan seluruh tugas dan tanggung jawab operasional utama sebagai ${roleName} sesuai Standar Prosedur Operasional (SOP) perusahaan.\n• Menyelesaikan target kerja harian dan mingguan secara konsisten dengan tingkat ketepatan waktu di atas 95%.\n• Melakukan koordinasi aktif lintas tim dan divisi untuk menjamin kelancaran alur pekerjaan tanpa hambatan.\n• Membantu penyusunan laporan evaluasi kerja berkala serta memberikan rekomendasi perbaikan untuk efisiensi kerja.`;
+
+      if (exp) {
+        exp.desc = universalDesc;
+        renderExperienceInputs();
+        renderCV();
+        showToast(`Template tugas otomatis untuk "${roleName}" berhasil dibuat!`);
+      }
+    }
+
+    // SISIPKAN KALIMAT AKSI KE DESKRIPSI
+    function insertActionVerb(expId, verb) {
+      const exp = experiences.find(e => e.id === expId);
+      if (exp) {
+        const line = `\n• ${verb}...`;
+        exp.desc = exp.desc ? (exp.desc.trim() + line) : `• ${verb}...`;
+        renderExperienceInputs();
+        renderCV();
+        showToast(`Kalimat aksi "${verb}" disisipkan!`);
       }
     }
 
@@ -763,8 +1001,13 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">Jabatan / Posisi Pekerjaan</label>
-              <input type="text" value="${exp.role}" oninput="updateExpField('${exp.id}', 'role', this.value)" placeholder="Contoh: IT Support / Staf Admin" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 bg-white font-medium">
+              <div class="flex justify-between items-center mb-0.5">
+                <label class="block text-[11px] font-semibold text-slate-700">Jabatan / Posisi Pekerjaan</label>
+                <span class="text-[10px] text-blue-600 font-medium">Bisa ketik bebas</span>
+              </div>
+              <input type="text" list="popular-jobs-list" value="${exp.role}" oninput="handleRoleInput('${exp.id}', this.value)" placeholder="Ketik jabatan (misal: Guru, Satpam, Admin...)" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 bg-white font-medium">
+              <!-- Kotak Rekomendasi Cerdas -->
+              <div id="suggest-${exp.id}" class="hidden"></div>
             </div>
             <div>
               <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">Nama Perusahaan / Instansi</label>
@@ -783,28 +1026,48 @@
             </div>
           </div>
 
-          <!-- PINTASAN AUTO-FILL TEMPLATE TUGAS PER POSISI (FITUR KUNCI) -->
-          <div class="bg-blue-50/80 border border-blue-200/80 rounded-xl p-3 space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-bold text-blue-900 flex items-center gap-1.5">
-                <span class="text-blue-600">✨</span> Pilih Template Tugas Otomatis Sesuai Jabatan:
+          <!-- GENERATOR RUMUS UNIVERSAL & BANK KALIMAT AKSI -->
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/80 rounded-xl p-3 space-y-2.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-[11px] font-bold text-blue-950 flex items-center gap-1.5">
+                <span class="text-blue-600">⚡</span> Generator Tugas Otomatis:
               </span>
+              <button type="button" onclick="generateUniversalTemplate('${exp.id}')" class="px-2.5 py-1 text-[11px] bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition shadow-2xs flex items-center gap-1">
+                <span>✨ Buat Tugas Otomatis Posisi Ini</span>
+              </button>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'admin')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">Staf Admin</button>
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'it_support')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">IT Support</button>
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'kasir_sales')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">Kasir / Toko</button>
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'cs')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">Customer Service</button>
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'sales_marketing')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">Sales / Marketing</button>
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'akuntansi')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">Keuangan / Akunting</button>
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'gudang')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">Staf Gudang</button>
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'barista')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">Barista / F&B</button>
-              <button type="button" onclick="autoFillTaskTemplate('${exp.id}', 'fresh_grad')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded-md hover:bg-blue-600 hover:text-white font-semibold text-blue-800 transition">Magang / Trainee</button>
+
+            <!-- Pilihan Cepat Kategori Teratas -->
+            <div class="border-t border-blue-200/60 pt-2">
+              <p class="text-[10px] text-blue-800 font-semibold mb-1.5">Pilihan Cepat Posisi Populer:</p>
+              <div class="flex flex-wrap gap-1">
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'admin')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Staf Admin</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'it_support')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">IT Support</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'kasir')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Kasir / Toko</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'cs')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Customer Service</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'sales')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Sales / Marketing</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'gudang')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Staf Gudang</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'guru')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Guru / Tutor</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'satpam')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Satpam / Security</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'kurir')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Kurir / Driver</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'perawat')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Perawat</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'desain')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Desain Grafis</button>
+                <button type="button" onclick="applyJobDatabaseTemplate('${exp.id}', 'barista')" class="px-2 py-0.5 text-[10px] bg-white border border-blue-200 rounded hover:bg-blue-600 hover:text-white font-medium text-slate-700 transition">Barista / F&B</button>
+              </div>
             </div>
           </div>
 
           <div>
-            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Rincian Deskripsi Tugas (Bisa diedit / disesuaikan):</label>
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-[11px] font-semibold text-slate-700">Rincian Deskripsi Tugas (Awali dengan kata kerja aktif):</label>
+              <!-- Sisipkan kata kerja aksi -->
+              <div class="flex items-center gap-1 text-[10px]">
+                <span class="text-slate-400">Sisipkan:</span>
+                <button type="button" onclick="insertActionVerb('${exp.id}', 'Mengelola dan memastikan')" class="text-blue-600 hover:underline font-medium">+Mengelola</button>
+                <button type="button" onclick="insertActionVerb('${exp.id}', 'Mengkoordinasikan pelaksanaan')" class="text-blue-600 hover:underline font-medium">+Koordinasi</button>
+                <button type="button" onclick="insertActionVerb('${exp.id}', 'Menyelesaikan target harian')" class="text-blue-600 hover:underline font-medium">+Target</button>
+              </div>
+            </div>
             <textarea rows="4" oninput="updateExpField('${exp.id}', 'desc', this.value)" placeholder="• Menginput data transaksi penjualan...&#10;• Melakukan koordinasi antar divisi..." class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 bg-white leading-relaxed font-normal">${exp.desc}</textarea>
           </div>
         `;
@@ -956,6 +1219,10 @@
         input.value = "Pramuniaga & Kasir berpengalaman dalam melayani ratusan transaksi pembayaran harian dengan tingkat akurasi pencatatan kas 100%. Memiliki kemampuan komunikasi persuasif, ramah, dan cekatan dalam mengelola stok display barang.";
       } else if (type === 'customer_service') {
         input.value = "Customer Service Representative yang terampil dalam menangani komunikasi pelanggan via telepon, WhatsApp bisnis, dan email. Berorientasi pada solusi cepat, berempati tinggi, dan mampu menjaga skor kepuasan pelanggan di atas 95%.";
+      } else if (type === 'guru') {
+        input.value = "Tenaga Pendidik yang berdedikasi dalam menciptakan suasana belajar yang interaktif, disiplin, dan memotivasi siswa. Terbiasa menyusun modul ajar, evaluasi berkala, serta menjalin komunikasi konstruktif dengan wali murid.";
+      } else if (type === 'desainer') {
+        input.value = "Kreator Visual & Desainer Grafis dengan kemampuan menerjemahkan ide promosi menjadi aset grafis yang menarik dan komunikatif. Menguasai software desain modern dan terbiasa bekerja dengan tenggat waktu yang ketat.";
       }
       document.getElementById('quick-summary-box').classList.add('hidden');
       renderCV();
@@ -978,7 +1245,7 @@
           company: 'PT Sinar Nusantara Abadi',
           city: 'Jakarta Pusat',
           period: 'Jan 2024 – Sekarang',
-          desc: jobTemplates.it_support.desc
+          desc: masterJobDatabase.it_support.desc
         },
         {
           id: 'exp2',
@@ -986,7 +1253,7 @@
           company: 'CV Maju Digital Solusindo',
           city: 'Tangerang',
           period: 'Jul 2023 – Des 2023',
-          desc: jobTemplates.admin.desc
+          desc: masterJobDatabase.admin.desc
         }
       ];
 
@@ -1002,7 +1269,6 @@
 
       document.getElementById('inp-certifications').value = "• Google IT Support Professional Certificate — Coursera (2023)\n• Pelatihan Administrasi Perkantoran Modern — Balai Latihan Kerja (2023)";
 
-      // Sample formal avatar SVG
       photoDataUrl = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="150" viewBox="0 0 120 150"><rect width="120" height="150" fill="%23dbeafe"/><circle cx="60" cy="50" r="28" fill="%231e3a8a"/><path d="M20,130 C20,95 40,85 60,85 C80,85 100,95 100,130 Z" fill="%231e40af"/><polygon points="60,85 54,105 60,115 66,105" fill="%23dc2626"/></svg>';
       
       document.getElementById('img-preview-thumb').src = photoDataUrl;
