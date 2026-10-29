@@ -203,6 +203,11 @@
       </div>
 
       <div class="flex items-center space-x-2 sm:space-x-3">
+        <button onclick="openTipModal('navbar')" class="px-3 py-1.5 text-xs sm:text-sm font-semibold text-amber-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-lg transition flex items-center gap-1.5 shadow-2xs">
+          <span>☕</span>
+          <span class="hidden sm:inline">Traktir</span> Kopi
+        </button>
+
         <button id="btn-load-sample" onclick="loadSampleData()" class="px-3 py-1.5 text-xs sm:text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition border border-slate-200 flex items-center gap-1.5">
           <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
           <span class="hidden sm:inline">Muat</span> Contoh
@@ -817,16 +822,72 @@
         <span>Tembusin • Qira Solution Ecosystem</span>
       </div>
       <p class="font-medium text-slate-600">Tembusin.my.id — Solusi Pembuatan CV Standar ATS Resmi Rekrutmen Indonesia</p>
-      <div class="flex justify-center items-center gap-4 text-[11px] text-blue-600 font-semibold pt-1">
+      <div class="flex flex-wrap justify-center items-center gap-4 text-[11px] text-blue-600 font-semibold pt-1">
         <a href="https://tekenin.my.id" target="_blank" class="hover:underline">Tekenin (Tanda Tangan PNG)</a>
         <span>•</span>
         <a href="https://tembusin.my.id" class="hover:underline">Tembusin (CV ATS Pro)</a>
+        <span>•</span>
+        <a href="https://saweria.co/tekenin" target="_blank" rel="noopener noreferrer" class="text-amber-700 hover:underline flex items-center gap-1 font-bold">☕ Dukung via Saweria</a>
         <span>•</span>
         <a href="https://qirasolution.com" target="_blank" class="hover:underline">Qira Solution Official</a>
       </div>
       <p class="text-[11px] text-slate-400 pt-2">© 2026 Tembusin by Qira Solution. Format 1 Kolom Bersih • Bebas Watermark • Dibuat Khusus untuk Membantu Para Pencari Kerja Indonesia.</p>
     </div>
   </footer>
+
+  <!-- Floating Action Button: Traktir Kopi -->
+  <div class="fixed bottom-5 left-5 z-40">
+    <button onclick="openTipModal('fab')" class="bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-full shadow-lg shadow-amber-300/60 flex items-center space-x-2 transition transform hover:scale-105 active:scale-95 border border-amber-300">
+      <span class="text-base">☕</span>
+      <span>Traktir Kopi (Rp 2.500)</span>
+    </button>
+  </div>
+
+  <!-- Tip / Saweria / QRIS Modal -->
+  <div id="tipModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 max-w-sm w-full text-center shadow-2xl space-y-4">
+      <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center text-2xl mx-auto shadow-sm">
+        ☕
+      </div>
+      <div>
+        <h3 class="font-bold text-slate-900 text-base">Traktir Es Kopi Pengembang</h3>
+        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+          Tembusin 100% gratis tanpa watermark dan tanpa simpan data. Dukungan <strong>Rp 2.500</strong> via QRIS Saweria sangat membantu operasional server & domain!
+        </p>
+      </div>
+
+      <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
+        <!-- QRIS Box -->
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm inline-block">
+          <img 
+            src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&margin=6&data=https%3A%2F%2Fsaweria.co%2Ftekenin" 
+            alt="QRIS Saweria tekenin" 
+            class="w-48 h-48 mx-auto rounded-lg object-contain"
+            loading="lazy"
+          />
+          <div class="mt-2 flex items-center justify-center gap-1.5 text-[11px] font-bold text-slate-700">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span>QRIS Resmi • saweria.co/tekenin</span>
+          </div>
+        </div>
+
+        <p class="text-[10px] text-slate-400 mt-2">
+          Scan via BCA, GoPay, OVO, DANA, ShopeePay, Livin', atau kamera HP
+        </p>
+
+        <div class="mt-3">
+          <a href="https://saweria.co/tekenin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold text-xs transition shadow-sm active:scale-95">
+            <span>☕ Buka Halaman Saweria</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <button onclick="document.getElementById('tipModal').classList.add('hidden')" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold text-xs transition">
+        Tutup
+      </button>
+    </div>
+  </div>
 
   <!-- Notification Toast -->
   <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl text-xs font-semibold flex items-center gap-2 transform translate-y-20 opacity-0 transition duration-300 z-50">
@@ -1615,6 +1676,9 @@
 
       html2pdf().set(opt).from(element).save().then(() => {
         showToast('PDF berhasil diunduh!');
+        setTimeout(() => {
+          openTipModal('download');
+        }, 1600);
       }).catch(err => {
         console.error(err);
         window.print();
@@ -1639,6 +1703,10 @@
       navigator.clipboard.writeText(fullText).then(() => {
         showToast('Teks mentah CV berhasil disalin ke clipboard!');
       });
+    }
+
+    function openTipModal(source) {
+      document.getElementById('tipModal').classList.remove('hidden');
     }
 
     function showToast(msg) {
