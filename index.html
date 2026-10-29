@@ -17,6 +17,10 @@
   <meta property="og:url" content="https://tembusin.my.id/">
   <meta property="og:title" content="Tembusin - Bikin CV ATS-Friendly Gratis & 100% Lolos Screening HRD">
   <meta property="og:description" content="Bikin CV ATS resmi standar rekrutmen Indonesia dalam 3 menit. Mendukung Fresh Graduate, 50+ profesi, opsi pasfoto formal, dan unduh PDF A4 gratis tanpa watermark!">
+  <meta property="og:image" content="https://tembusin.my.id/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:site_name" content="Tembusin by Qira Solution">
   <meta property="og:locale" content="id_ID">
 
@@ -25,6 +29,7 @@
   <meta name="twitter:url" content="https://tembusin.my.id/">
   <meta name="twitter:title" content="Tembusin - Bikin CV ATS-Friendly Gratis & 100% Lolos Screening HRD">
   <meta name="twitter:description" content="Generator CV ATS resmi standar HRD Indonesia by Qira Solution. 100% gratis, bebas watermark, siap unduh PDF A4.">
+  <meta name="twitter:image" content="https://tembusin.my.id/og-image.png">
 
   <!-- Structured Data Schema.org (JSON-LD) for Rich Google Snippets -->
   <script type="application/ld+json">
@@ -203,6 +208,11 @@
       </div>
 
       <div class="flex items-center space-x-2 sm:space-x-3">
+        <a href="https://api.whatsapp.com/send?text=Halo%20semua!%20Buat%20kamu%20yang%20lagi%20nyiapin%20lamaran%20kerja%2C%20bisa%20bikin%20CV%20ATS-Friendly%20resmi%20gratis%20tanpa%20watermark%20dan%20ada%20template%2050%2B%20profesi%20di%20https%3A%2F%2Ftembusin.my.id" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-xs sm:text-sm font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg transition hidden sm:flex items-center gap-1.5 shadow-2xs">
+          <span>📲</span>
+          <span>Bagikan WA</span>
+        </a>
+
         <button onclick="openTipModal('navbar')" class="px-3 py-1.5 text-xs sm:text-sm font-semibold text-amber-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-lg transition flex items-center gap-1.5 shadow-2xs">
           <span>☕</span>
           <span>Traktir Kopi</span>
@@ -239,6 +249,56 @@
 
       <!-- LEFT COLUMN: Form Input Editor -->
       <section id="pane-editor" class="lg:col-span-6 space-y-6">
+
+        <!-- ATS Score Meter: Indikator Kelayakan Screening HRD Real-Time -->
+        <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg font-bold">
+                🎯
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-800 uppercase tracking-wider block">Skor Kelayakan Screening ATS:</span>
+                <span id="ats-score-status" class="text-[11px] font-bold text-emerald-600">⭐️ 100% Siap Tembus HRD (Optimal)</span>
+              </div>
+            </div>
+            <div class="text-right">
+              <span id="ats-score-number" class="text-2xl font-black text-slate-900 tracking-tight">100%</span>
+            </div>
+          </div>
+
+          <!-- Animated Progress Bar -->
+          <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden p-0.5 border border-slate-200">
+            <div id="ats-progress-bar" class="h-full rounded-full transition-all duration-500 bg-gradient-to-r from-blue-500 to-emerald-500" style="width: 100%;"></div>
+          </div>
+
+          <!-- Checklist Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 pt-1 text-[11px]">
+            <span id="pill-check-contact" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+              <span class="icon font-bold">✓</span> Kontak & Email
+            </span>
+            <span id="pill-check-summary" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+              <span class="icon font-bold">✓</span> Ringkasan Diri
+            </span>
+            <span id="pill-check-exp" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+              <span class="icon font-bold">✓</span> Pengalaman / Tugas
+            </span>
+            <span id="pill-check-edu" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+              <span class="icon font-bold">✓</span> Pendidikan
+            </span>
+            <span id="pill-check-skills" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+              <span class="icon font-bold">✓</span> Keahlian (Skills)
+            </span>
+            <span id="pill-check-layout" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+              <span class="icon font-bold">✓</span> Format 1-Kolom
+            </span>
+          </div>
+
+          <!-- Live Tip Recommendation -->
+          <p id="ats-live-tip" class="text-[11px] text-slate-500 bg-slate-50 p-2 rounded-lg border border-slate-200/80">
+            💡 <strong>Status ATS:</strong> Resume Anda memiliki format dan kelengkapan data prima untuk dipindai oleh sistem ATS HRD.
+          </p>
+        </div>
 
         <!-- Banner Info Profil Pelamar: Fresh Graduate vs Profesional -->
         <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs space-y-3">
@@ -881,6 +941,12 @@
             <span>↗</span>
           </a>
         </div>
+      </div>
+
+      <div class="pt-1">
+        <a href="https://api.whatsapp.com/send?text=Halo%20semua!%20Buat%20kamu%20yang%20lagi%20nyiapin%20lamaran%20kerja%2C%20bisa%20bikin%20CV%20ATS-Friendly%20resmi%20gratis%20tanpa%20watermark%20dan%20ada%20template%2050%2B%20profesi%20di%20https%3A%2F%2Ftembusin.my.id" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition shadow-sm active:scale-95">
+          <span>📲 Bagikan Tembusin ke Grup WhatsApp</span>
+        </a>
       </div>
 
       <button onclick="document.getElementById('tipModal').classList.add('hidden')" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold text-xs transition">
@@ -1556,6 +1622,118 @@
       }
 
       saveToLocalStorage();
+      updateATSScore();
+    }
+
+    function updateATSScore() {
+      let score = 0;
+      const tips = [];
+
+      // 1. Kontak & Identitas (20 pts)
+      const name = (document.getElementById('inp-name') ? document.getElementById('inp-name').value.trim() : '');
+      const phone = (document.getElementById('inp-phone') ? document.getElementById('inp-phone').value.trim() : '');
+      const email = (document.getElementById('inp-email') ? document.getElementById('inp-email').value.trim() : '');
+      const pillContact = document.getElementById('pill-check-contact');
+      if (name.length > 2 && (phone.length > 5 || email.length > 5)) {
+        score += 20;
+        setPillStatus(pillContact, true, 'Kontak & Email');
+      } else {
+        setPillStatus(pillContact, false, 'Kontak Belum Lengkap');
+        tips.push('Lengkapi nomor telepon dan email aktif di bagian Informasi Pribadi.');
+      }
+
+      // 2. Ringkasan Diri (20 pts)
+      const summary = (document.getElementById('inp-summary') ? document.getElementById('inp-summary').value.trim() : '');
+      const pillSummary = document.getElementById('pill-check-summary');
+      const wordCount = summary ? summary.split(/\s+/).length : 0;
+      if (wordCount >= 15) {
+        score += 20;
+        setPillStatus(pillSummary, true, 'Ringkasan Diri Kuat');
+      } else {
+        setPillStatus(pillSummary, false, 'Ringkasan Min. 15 Kata');
+        tips.push('Gunakan Template Ringkasan Cepat agar profil Anda langsung memikat HRD.');
+      }
+
+      // 3. Pengalaman / Organisasi (25 pts)
+      const pillExp = document.getElementById('pill-check-exp');
+      const validExp = experiences.length > 0 && experiences.some(e => e.role && e.desc && e.desc.length > 20);
+      if (validExp) {
+        score += 25;
+        setPillStatus(pillExp, true, 'Pengalaman / Tugas');
+      } else {
+        setPillStatus(pillExp, false, 'Isi Min. 1 Pengalaman');
+        tips.push('Klik tombol "✨ Buat Tugas Otomatis" pada pengalaman kerja/organisasi Anda.');
+      }
+
+      // 4. Pendidikan (15 pts)
+      const school = (document.getElementById('inp-edu-school') ? document.getElementById('inp-edu-school').value.trim() : '');
+      const degree = (document.getElementById('inp-edu-degree') ? document.getElementById('inp-edu-degree').value.trim() : '');
+      const pillEdu = document.getElementById('pill-check-edu');
+      if (school.length > 2 && degree.length > 2) {
+        score += 15;
+        setPillStatus(pillEdu, true, 'Pendidikan Lengkap');
+      } else {
+        setPillStatus(pillEdu, false, 'Isi Asal Kampus/Sekolah');
+        tips.push('Cantumkan nama universitas/sekolah dan jurusan Anda.');
+      }
+
+      // 5. Keahlian (15 pts)
+      const hard = (document.getElementById('inp-skills-hard') ? document.getElementById('inp-skills-hard').value.trim() : '');
+      const soft = (document.getElementById('inp-skills-soft') ? document.getElementById('inp-skills-soft').value.trim() : '');
+      const pillSkills = document.getElementById('pill-check-skills');
+      if (hard.length > 3 || soft.length > 3) {
+        score += 15;
+        setPillStatus(pillSkills, true, 'Keahlian (Skills)');
+      } else {
+        setPillStatus(pillSkills, false, 'Isi Min. 3 Keahlian');
+        tips.push('Cantumkan hard skills dan soft skills relevan dengan lowongan yang dilamar.');
+      }
+
+      // 6. Format ATS 1-Kolom (5 pts standar lolos)
+      const pillLayout = document.getElementById('pill-check-layout');
+      score += 5;
+      setPillStatus(pillLayout, true, 'Format 1-Kolom');
+
+      if (score > 100) score = 100;
+
+      // Update UI
+      const scoreNumber = document.getElementById('ats-score-number');
+      const progressBar = document.getElementById('ats-progress-bar');
+      const statusText = document.getElementById('ats-score-status');
+      const liveTip = document.getElementById('ats-live-tip');
+
+      if (scoreNumber && progressBar && statusText && liveTip) {
+        scoreNumber.textContent = `${score}%`;
+        progressBar.style.width = `${score}%`;
+
+        if (score >= 80) {
+          progressBar.className = 'h-full rounded-full transition-all duration-500 bg-gradient-to-r from-blue-500 to-emerald-500';
+          statusText.className = 'text-[11px] font-bold text-emerald-600';
+          statusText.textContent = '⭐️ 100% Siap Tembus HRD (Optimal)';
+          liveTip.innerHTML = '💡 <strong>Status ATS:</strong> Sempurna! Format dan kelengkapan data resume Anda sangat optimal untuk dipindai oleh sistem ATS HRD.';
+        } else if (score >= 50) {
+          progressBar.className = 'h-full rounded-full transition-all duration-500 bg-gradient-to-r from-amber-400 to-blue-500';
+          statusText.className = 'text-[11px] font-bold text-amber-600';
+          statusText.textContent = '⚠️ Cukup Baik (Perlu Sedikit Pelengkap)';
+          liveTip.innerHTML = `💡 <strong>Rekomendasi ATS:</strong> ${tips[0] || 'Lengkapi bagian yang belum terisi untuk hasil maksimal.'}`;
+        } else {
+          progressBar.className = 'h-full rounded-full transition-all duration-500 bg-gradient-to-r from-rose-500 to-amber-400';
+          statusText.className = 'text-[11px] font-bold text-rose-600';
+          statusText.textContent = '❌ Data Kurang Lengkap untuk ATS';
+          liveTip.innerHTML = `💡 <strong>Prioritas Perbaikan:</strong> ${tips[0] || 'Isi nama, kontak, dan ringkasan profil Anda.'}`;
+        }
+      }
+    }
+
+    function setPillStatus(pill, isValid, text) {
+      if (!pill) return;
+      if (isValid) {
+        pill.className = 'px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 transition-all';
+        pill.innerHTML = `<span class="icon font-bold">✓</span> ${text}`;
+      } else {
+        pill.className = 'px-2 py-1 rounded-lg bg-rose-50 text-rose-700 font-medium border border-rose-200 flex items-center gap-1 transition-all';
+        pill.innerHTML = `<span class="icon font-bold">✕</span> ${text}`;
+      }
     }
 
     function toggleQuickSummary() {
