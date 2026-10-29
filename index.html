@@ -220,7 +220,7 @@
 
         <button onclick="downloadPDF()" class="px-4 py-2 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition shadow-md hover:shadow-lg flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          <span>Unduh PDF A4</span>
+          <span>Unduh PDF</span>
         </button>
       </div>
     </div>
@@ -269,24 +269,24 @@
 
           <!-- Checklist Pills -->
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 pt-1 text-[11px]">
-            <span id="pill-check-contact" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+            <button type="button" id="pill-check-contact" onclick="document.getElementById('inp-name').focus(); document.getElementById('inp-name').scrollIntoView({behavior: 'smooth', block: 'center'});" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 cursor-pointer hover:shadow-xs transition text-left">
               <span class="icon font-bold">✓</span> Kontak & Email
-            </span>
-            <span id="pill-check-summary" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+            </button>
+            <button type="button" id="pill-check-summary" onclick="document.getElementById('inp-summary').focus(); document.getElementById('inp-summary').scrollIntoView({behavior: 'smooth', block: 'center'});" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 cursor-pointer hover:shadow-xs transition text-left">
               <span class="icon font-bold">✓</span> Ringkasan Diri
-            </span>
-            <span id="pill-check-exp" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+            </button>
+            <button type="button" id="pill-check-exp" onclick="document.getElementById('title-sec-exp-form').scrollIntoView({behavior: 'smooth', block: 'center'});" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 cursor-pointer hover:shadow-xs transition text-left">
               <span class="icon font-bold">✓</span> Pengalaman / Tugas
-            </span>
-            <span id="pill-check-edu" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+            </button>
+            <button type="button" id="pill-check-edu" onclick="document.getElementById('inp-edu-school').focus(); document.getElementById('inp-edu-school').scrollIntoView({behavior: 'smooth', block: 'center'});" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 cursor-pointer hover:shadow-xs transition text-left">
               <span class="icon font-bold">✓</span> Pendidikan
-            </span>
-            <span id="pill-check-skills" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+            </button>
+            <button type="button" id="pill-check-skills" onclick="document.getElementById('inp-skills-hard').focus(); document.getElementById('inp-skills-hard').scrollIntoView({behavior: 'smooth', block: 'center'});" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 cursor-pointer hover:shadow-xs transition text-left">
               <span class="icon font-bold">✓</span> Keahlian (Skills)
-            </span>
-            <span id="pill-check-layout" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1">
+            </button>
+            <button type="button" id="pill-check-layout" onclick="document.getElementById('btn-layout-modern').scrollIntoView({behavior: 'smooth', block: 'center'});" class="px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 cursor-pointer hover:shadow-xs transition text-left">
               <span class="icon font-bold">✓</span> Format 1-Kolom
-            </span>
+            </button>
           </div>
 
           <!-- Live Tip Recommendation -->
@@ -549,22 +549,6 @@
               <textarea id="inp-certifications" rows="2" oninput="renderCV()" placeholder="Contoh:&#10;• Sertifikat Pelatihan Microsoft Office — BLK (2024)&#10;• Juara 2 Lomba Karya Tulis Ilmiah Tingkat Wilayah (2023)" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
             </div>
           </div>
-        </div>
-
-        <!-- Cross-Promotion: Ekosistem Qira Solution (Tanda Tangan PNG) -->
-        <div class="bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-200 p-4 rounded-2xl flex items-center justify-between gap-3 shadow-xs">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg shrink-0">
-              ✍️
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-indigo-950">Butuh Tanda Tangan Digital Transparan?</h4>
-              <p class="text-[11px] text-indigo-800">Ubah foto tanda tangan di kertas menjadi PNG bening siap tempel di Word/PDF.</p>
-            </div>
-          </div>
-          <a href="https://tekenin.vercel.app" target="_blank" class="px-3.5 py-1.5 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition shrink-0 shadow-2xs">
-            Buka Tekenin
-          </a>
         </div>
 
         <!-- Tombol Aksi Salin Teks Mentah -->
@@ -1723,10 +1707,10 @@
     function setPillStatus(pill, isValid, text) {
       if (!pill) return;
       if (isValid) {
-        pill.className = 'px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 transition-all';
+        pill.className = 'px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-medium border border-emerald-200 flex items-center gap-1 transition-all cursor-pointer hover:shadow-xs text-left';
         pill.innerHTML = `<span class="icon font-bold">✓</span> ${text}`;
       } else {
-        pill.className = 'px-2 py-1 rounded-lg bg-rose-50 text-rose-700 font-medium border border-rose-200 flex items-center gap-1 transition-all';
+        pill.className = 'px-2 py-1 rounded-lg bg-rose-50 text-rose-700 font-medium border border-rose-200 flex items-center gap-1 transition-all cursor-pointer hover:shadow-xs text-left';
         pill.innerHTML = `<span class="icon font-bold">✕</span> ${text}`;
       }
     }
